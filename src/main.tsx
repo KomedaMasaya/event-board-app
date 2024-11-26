@@ -6,7 +6,6 @@ import { EventBoardForSmartphone } from './page/event-board-for-smartphone';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
-  background-image: url('./assets/hhkb.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
