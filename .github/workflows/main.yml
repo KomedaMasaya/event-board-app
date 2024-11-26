@@ -1,0 +1,49 @@
+name: Deploy Netlify
+
+on:
+  workflow_dispatch: #手動実行
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  statuses: write
+  deployments: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22.11.0
+
+      - run: npm install
+
+      - run: npm run build
+
+      - name: Set GitHub Deployment Environment
+        id: github_deployment_environment
+        run: |
+          echo "GITHUB_DEPLOYMENT_ENVIRONMENT=Netlify pro" >> "${GITHUB_OUTPUT}"
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          github-deployment-environment: ${{ steps.github_deployment_environment.outputs.GITHUB_DEPLOYMENT_ENVIRONMENT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: ${{ github.event.head_commit.message || github.event.pull_request.title }}
+          alias: deploy-preview-${{ github.event.number }}
+          fails-without-credentials: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
