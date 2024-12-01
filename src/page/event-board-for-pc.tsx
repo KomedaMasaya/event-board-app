@@ -34,9 +34,6 @@ export function EventBoardForPC() {
   // イベントリストを表示するコンポーネント
   const EventList = ({ title, events }: { title: string; events: Event[] }) => (
     <Box display="flex" flexDirection="column" flex="1" overflow="auto" mb="16px">
-      <Typography variant="h6" color="primary">
-        {title}
-      </Typography>
       {events.length > 0 ? (
         events.map((event, index) => <EventCardForPC key={index} event={event} />)
       ) : (
@@ -55,6 +52,18 @@ export function EventBoardForPC() {
       <Box display="flex" flexDirection="column" ml="20%" p="16px" width="80%" height="100vh" overflow="hidden">
         {/* ランダムにピックアップされたイベントを表示 */}
         {selectedEvent && <EventPickup event={selectedEvent} />}
+        <Box display="flex" >
+          <Box display="flex"  width="50%" >
+            <Typography variant="h6" color="primary">
+              開催中のイベント
+            </Typography>
+          </Box>
+          <Box display="flex"  width="50%" >
+            <Typography variant="h6" color="primary">
+              開催予定のイベント
+            </Typography>
+          </Box>
+        </Box>
         <Box display="flex" flexDirection="row" overflow="auto">
           {/* 開催中のイベントを表示するコンテナ */}
           <EventList title="開催中のイベント" events={ongoingEvents} />

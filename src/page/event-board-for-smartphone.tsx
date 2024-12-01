@@ -22,9 +22,6 @@ export function EventBoardForSmartphone() {
   // イベントリストを表示するコンポーネント
   const EventList = ({ events }: { events: Event[] }) => (
     <Box display="flex" flexDirection="column" flex="1" overflow="auto" mb="16px">
-      <Typography variant="h6" color="primary">
-        イベント一覧
-      </Typography>
       {events.length > 0 ? (
         events.map((event, index) => <EventCardForSmartphone key={index} event={event} />)
       ) : (
@@ -39,8 +36,11 @@ export function EventBoardForSmartphone() {
     <Box display="flex" flexDirection="column" height="100vh" overflow="hidden">
       {/* カテゴリ選択コンポーネント */}
       <EventCategoryForSmartphone onCategoryChange={handleCategoryChange} />
+      <Typography variant="h6" color="primary" mt="56px">
+        イベント一覧
+      </Typography>
       {/* イベントを表示するコンテナ */}
-      <Box display="flex" flexDirection="column" mt="56px" p="16px" overflow="auto">
+      <Box display="flex" flexDirection="column" overflow="auto">
         {/* 開催中のイベントを表示するコンテナ */}
         <EventList events={events} />
       </Box>
