@@ -40,19 +40,6 @@ const dateContainerStyles = {
   marginTop: '16px',
 };
 
-const dateStyles = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  justifyContent: 'center',
-  padding: '12px',
-  backgroundColor: '#f0f0f0',
-  borderRadius: '8px',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  marginBottom: '8px',
-  width: '100%',
-};
-
 export function EventPickup({ event }: EventPickupProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -74,22 +61,13 @@ export function EventPickup({ event }: EventPickupProps) {
             {event.name}
           </Typography>
           <Typography variant="body1" color="textSecondary" sx={{ marginLeft: '16px', color: '#666', fontSize: '1.2rem' }}>
-            {categoryLabel}
+            {categoryLabel}対応
           </Typography>
         </Box>
-        <Typography variant="body2" color="textSecondary" sx={{ marginBottom: '16px', color: '#666' }}>
-          {event.summary}
-        </Typography>
-        <Typography variant="body1" sx={{ marginBottom: '16px', color: '#444' }}>
-          {event.description}
-        </Typography>
         <Box sx={dateContainerStyles}>
-          <Box sx={dateStyles}>
-            <Typography variant="subtitle1" component="div" sx={{ fontWeight: 'bold', color: '#333' }}>
-              開催期間
-            </Typography>
-            <Typography variant="body2" sx={{ color: '#555' }}>
-              {new Date(event.startDateTime).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })} {new Date(event.startDateTime).toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })} 〜 {new Date(event.endDateTime).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })} {new Date(event.endDateTime).toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })}
+          <Box>
+            <Typography component="div" sx={{ fontWeight: 'bold', color: '#333' }}>
+              開催期間 {new Date(event.startDateTime).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })} {new Date(event.startDateTime).toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })} 〜 {new Date(event.endDateTime).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })} {new Date(event.endDateTime).toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })}
             </Typography>
           </Box>
         </Box>
