@@ -37,7 +37,7 @@ export function EventCategoryForSmartphone({ onCategoryChange }: EventCategoryPr
           <Button
             variant={selectedCategory === category.value ? 'contained' : 'outlined'}
             onClick={() => handleCategoryClick(category.value)}
-            sx={{ width: '100%', height: '56px', border: 'none', borderRadius: 0 }}
+            sx={{ width: '100%', height: '56px', border: 'none', borderRadius: 0 ,fontSize: 'clamp(0.7rem, 2.5vw, 1.2rem)',padding: '0 8px'}}
           >
             {category.label}
           </Button>
