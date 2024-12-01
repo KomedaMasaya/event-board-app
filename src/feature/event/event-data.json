@@ -1,6 +1,6 @@
 [
   {
-    "name": "AI技術セミナー2024",
+    "name": "DEMO：AI技術セミナー2024",
     "category": 1,
     "startDateTime": "2024-12-20T10:00",
     "endDateTime": "2024-12-20T12:00",
@@ -10,7 +10,7 @@
     "linkName": "AI技術セミナー2024の詳細"
   },
   {
-    "name": "ウェブ開発ワークショップ",
+    "name": "DEMO：ウェブ開発ワークショップ",
     "category": 2,
     "startDateTime": "2024-12-21T14:00",
     "endDateTime": "2024-12-21T17:00",
@@ -20,7 +20,7 @@
     "linkName": "ウェブ開発ワークショップの詳細"
   },
   {
-    "name": "クラウドコンピューティングカンファレンス",
+    "name": "DEMO：クラウドコンピューティングカンファレンス",
     "category": 3,
     "startDateTime": "2024-12-22T09:00",
     "endDateTime": "2024-12-22T18:00",
@@ -30,7 +30,7 @@
     "linkName": "クラウドコンピューティングカンファレンスの詳細"
   },
   {
-    "name": "データサイエンスハッカソン",
+    "name": "DEMO：データサイエンスハッカソン",
     "category": 1,
     "startDateTime": "2024-12-23T10:00",
     "endDateTime": "2024-12-24T18:00",
@@ -40,7 +40,7 @@
     "linkName": "データサイエンスハッカソンの詳細"
   },
   {
-    "name": "IoT技術展示会",
+    "name": "DEMO：IoT技術展示会",
     "category": 2,
     "startDateTime": "2024-12-25T10:00",
     "endDateTime": "2024-12-26T17:00",
@@ -50,7 +50,7 @@
     "linkName": "IoT技術展示会の詳細"
   },
   {
-    "name": "サイバーセキュリティセミナー",
+    "name": "DEMO：サイバーセキュリティセミナー",
     "category": 3,
     "startDateTime": "2024-12-27T13:00",
     "endDateTime": "2024-12-27T16:00",
@@ -60,7 +60,7 @@
     "linkName": "サイバーセキュリティセミナーの詳細"
   },
   {
-    "name": "ブロックチェーン技術ワークショップ",
+    "name": "DEMO：ブロックチェーン技術ワークショップ",
     "category": 1,
     "startDateTime": "2024-12-28T10:00",
     "endDateTime": "2024-12-28T15:00",
@@ -70,7 +70,7 @@
     "linkName": "ブロックチェーン技術ワークショップの詳細"
   },
   {
-    "name": "AIスタートアップピッチ",
+    "name": "DEMO：AIスタートアップピッチ",
     "category": 2,
     "startDateTime": "2024-12-29T14:00",
     "endDateTime": "2024-12-29T18:00",
